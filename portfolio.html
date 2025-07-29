@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frosted Glass Button UI</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffcde2, #ffecf2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .card {
+        text-align: center;
+        padding: 40px 20px;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        background-color: #d9f3ff;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .avatar img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 5px;
+        background: linear-gradient(90deg, rgb(255, 0, 140), rgb(0, 0, 0));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: transform 0.3s ease;
+      }
+
+      h1:hover {
+        transform: scale(1.05);
+      }
+
+      .subtitle {
+        color: #d04893;
+        margin-bottom: 20px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+      }
+
+      .subtitle:hover {
+        color: rgb(180, 0, 99);
+      }
+
+      /* Start Button with same hover effect */
+      .start-button {
+        position: relative;
+        overflow: hidden;
+        width: 180px;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 94, 191, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 25px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 1;
+        margin-bottom: 20px;
+      }
+
+      .start-button::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(232, 76, 166, 1);
+        z-index: -1;
+        transition: height 0.3s ease;
+      }
+
+      .start-button:hover::before {
+        height: 100%;
+      }
+
+      .start-button:hover {
+        color: #fff;
+      }
+
+      /* Social Buttons */
+      .social-buttons {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .frosted-btn {
+        position: relative;
+        overflow: hidden;
+        width: 140px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #000;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        z-index: 1;
+      }
+
+      .frosted-btn::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(243, 42, 153, 0.9);
+        z-index: -1;
+        transition: height 0.3s ease;
+      }
+
+      .frosted-btn:hover::before {
+        height: 100%;
+      }
+
+      .frosted-btn:hover {
+        color: white;
+      }
+
+      footer {
+        margin-top: 100px;
+        font-size: 14px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer p {
+        display: inline-block;
+        margin: 8px 0;
+        background: linear-gradient(90deg, #d04893, #7b2cbf);
+        background-size: 200% auto;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        animation: shineText 3s linear infinite, footerRise 1s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      footer p:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+
+      footer p:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+
+      @keyframes shineText {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      @keyframes footerRise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .social-buttons {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .frosted-btn,
+        .start-button {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="avatar">
+        <img
+          src="https://i.ibb.co/jPFJJCpv/Image-2-Photoroom.png"
+          alt="avatar"
+        />
+      </div>
+      <h1>Satabdi Saikia</h1>
+      <p class="subtitle">Junior Android Developer</p>
+      <button class="start-button" onclick="location.href='about.html'">
+        Start
+      </button>
+
+      <div class="social-buttons">
+        <a href="https://github.com/nishigandha1435" class="frosted-btn"
+          >Github</a
+        >
+        <a href="mailto:idrewha@gmail.com" class="frosted-btn">Email</a>
+        <a
+          href="https://www.linkedin.com/in/satabdi-saikia-947195321/"
+          class="frosted-btn"
+          >LinkedIn</a
+        >
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with 🩷 by Satabdi Saikia</p>
+      <p>&copy; 2025 All rights reserved</p>
+    </footer>
+  </body>
+</html>
